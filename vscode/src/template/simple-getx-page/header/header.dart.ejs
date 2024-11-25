@@ -1,0 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:getx_helper/getx_helper.dart';
+import 'package:<%= data.importPath %>/logic/<%= data.name %>_logic.dart';
+
+typedef <%= data.nameLargeHump %>LogicPutMixin<W extends StatefulWidget>
+    = GetxLogicPutStateMixin<<%= data.nameLargeHump %>Logic, W>;
+
+typedef <%= data.nameLargeHump %>LogicConsumerMixin<W extends StatefulWidget>
+    = GetxLogicConsumerStateMixin<<%= data.nameLargeHump %>Logic, W>;

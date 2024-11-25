@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:<%= data.importPath %>/logic/<%= data.name %>_logic.dart';
+import 'package:<%= data.importPath %>/header/<%= data.name %>_header.dart';
+
+class <%= data.nameLargeHump %>Page extends StatefulWidget {
+  const <%= data.nameLargeHump %>Page({super.key});
+
+  @override
+  State<<%= data.nameLargeHump %>Page> createState() => <%= data.nameLargeHump %>PageState();
+}
+
+class <%= data.nameLargeHump %>PageState extends State<<%= data.nameLargeHump %>Page>
+    with <%= data.nameLargeHump %>LogicPutMixin<<%= data.nameLargeHump %>Page> {
+
+  @override
+  <%= data.nameLargeHump %>Logic initLogic() => <%= data.nameLargeHump %>Logic();
+
+  @override
+  Widget buildBody(BuildContext context) {
+    return GetBuilder<<%= data.nameLargeHump %>Logic>(
+      tag: logicTag,
+      builder: (_) {
+        return Scaffold(
+          body: Container(),
+        );
+      },
+    );
+  }
+}
+
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> with <%= data.nameLargeHump %>LogicConsumerMixin<MyWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}

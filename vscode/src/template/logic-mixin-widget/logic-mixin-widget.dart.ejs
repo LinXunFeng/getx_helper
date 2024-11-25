@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:<%= data.importPath %>/header/<%= data.dirname %>_header.dart';
+
+class <%= data.nameLargeHump %> extends StatefulWidget {
+  const <%= data.nameLargeHump %>({super.key});
+
+  @override
+  State<<%= data.nameLargeHump %>> createState() => _<%= data.nameLargeHump %>State();
+}
+
+class _<%= data.nameLargeHump %>State extends State<<%= data.nameLargeHump %>>
+    with <%= data.logicNameLargeHump %>ConsumerMixin<<%= data.nameLargeHump %>> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}

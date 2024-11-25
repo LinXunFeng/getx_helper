@@ -1,0 +1,14 @@
+import 'package:get/get.dart';
+import 'package:<%= data.importPath %>/state/<%= data.name %>_state.dart';
+
+class <%= data.nameLargeHump %>Logic extends GetxController {
+  final <%= data.nameLargeHump %>State state = <%= data.nameLargeHump %>State();
+
+  @override
+  void onInit() async {
+    super.onInit();
+
+    // 接收路由参数
+    // state.parameter = Get.parameters['parameter'] ?? "";
+  }
+}
