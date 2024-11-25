@@ -1,0 +1,4 @@
+name: getx_helper
+
+packages:
+  - ./**
