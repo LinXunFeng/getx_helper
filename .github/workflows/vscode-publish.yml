@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+defaults:
+  run:
+    working-directory: ./vscode
 
 jobs:
   check_version:
@@ -22,6 +25,8 @@ jobs:
         with:
           working-directory: ./vscode
           script: |
+            const path = require('path');
+            process.chdir(path.join(__dirname, 'vscode'));
             console.log(process.cwd());
             const fs = require('fs');
             const manifest = JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -66,14 +71,12 @@ jobs:
           node-version: "16"
 
       - name: Install
-        working-directory: ./vscode
         run: |
           npm install
 
       - name: Publish extension to marketplace
         uses: HaaLeo/publish-vscode-extension@v1
         with:
-          working-directory: ./vscode
           registryUrl: https://marketplace.visualstudio.com
 
           # Personal access token
