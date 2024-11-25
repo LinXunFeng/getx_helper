@@ -1,6 +1,6 @@
 name: getx_helper
 description: "A plugin for simplifying the use of GetX"
-version: 0.0.1+1
+version: 0.0.1+2
 homepage: https://github.com/LinXunFeng/getx_helper
 
 environment:

@@ -15,11 +15,12 @@ Packages with breaking changes:
 
 Packages with other changes:
 
- - [`getx_helper` - `v0.0.1+1`](#getx_helper---v0011)
+ - [`getx_helper` - `v0.0.1+2`](#getx_helper---v0012)
 
 ---
 
-#### `getx_helper` - `v0.0.1+1`
+#### `getx_helper` - `v0.0.1+2`
 
+ - **DOCS**: README.
  - **DOCS**(flutter): README.md.
 
