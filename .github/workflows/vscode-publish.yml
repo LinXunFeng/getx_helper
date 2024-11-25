@@ -8,9 +8,6 @@ on:
 jobs:
   check_version:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./vscode
     outputs:
       version: ${{ steps.version.outputs.version }}
       alpha: ${{ steps.version.outputs.alpha }}
@@ -23,6 +20,7 @@ jobs:
         id: version
         uses: actions/github-script@v7
         with:
+          working-directory: ./vscode
           script: |
             console.log(process.cwd());
             const fs = require('fs');
@@ -56,9 +54,6 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: vscode
     needs: check_version
     if: ${{ needs.check_version.outputs.validVersion == 'true' }}
     steps:
@@ -71,12 +66,14 @@ jobs:
           node-version: "16"
 
       - name: Install
+        working-directory: ./vscode
         run: |
           npm install
 
       - name: Publish extension to marketplace
         uses: HaaLeo/publish-vscode-extension@v1
         with:
+          working-directory: ./vscode
           registryUrl: https://marketplace.visualstudio.com
 
           # Personal access token
