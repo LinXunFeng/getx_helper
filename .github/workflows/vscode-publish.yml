@@ -5,13 +5,12 @@ on:
     branches:
       - main
 
-defaults:
-  run:
-    working-directory: vscode
-
 jobs:
   check_version:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vscode
     outputs:
       version: ${{ steps.version.outputs.version }}
       alpha: ${{ steps.version.outputs.alpha }}
@@ -56,6 +55,9 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vscode
     needs: check_version
     if: ${{ needs.check_version.outputs.validVersion == 'true' }}
     steps:
