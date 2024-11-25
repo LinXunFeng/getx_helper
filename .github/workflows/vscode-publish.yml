@@ -76,6 +76,7 @@ jobs:
       - name: Publish extension to marketplace
         uses: HaaLeo/publish-vscode-extension@v1
         with:
+          working-directory: ./vscode
           registryUrl: https://marketplace.visualstudio.com
 
           # Personal access token
