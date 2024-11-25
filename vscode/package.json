@@ -1,7 +1,7 @@
 {
   "name": "getx-helper",
-  "displayName": "getx-helper",
-  "description": "getx-helper vscode extension",
+  "displayName": "GetX Helper",
+  "description": "A plugin for simplifying the use of GetX",
   "publisher": "LinXunFeng",
   "version": "0.0.1",
   "engines": {
