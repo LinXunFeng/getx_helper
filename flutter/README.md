@@ -20,7 +20,7 @@ import 'package:getx_helper/getx_helper.dart';
 
 ## Usage
 
-Please refer to [example](./example)
+Please refer to [example](./flutter/example)
 
 ## 🖨 About Me
 
