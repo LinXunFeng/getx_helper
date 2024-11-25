@@ -359,7 +359,8 @@ void main() {
         expect(tag, logicTagOnConsumerDispose);
       });
 
-      testWidgets('GetxLogicProvider.put 与 GetxLogicConsumer.get', (tester) async {
+      testWidgets('GetxLogicProvider.put 与 GetxLogicConsumer.get',
+          (tester) async {
         BuildContext? builderContext;
 
         MyGetxLogic? logicOnProviderDispose;

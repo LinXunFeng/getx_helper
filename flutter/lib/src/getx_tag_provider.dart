@@ -112,4 +112,3 @@ class GetxTagProviderInheritedWidget extends InheritedWidget {
     return logicTag ?? '';
   }
 }
-
