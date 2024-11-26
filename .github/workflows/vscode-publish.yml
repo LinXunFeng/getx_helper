@@ -77,6 +77,7 @@ jobs:
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           packagePath: ./vscode
+          skipDuplicate: true
           registryUrl: https://marketplace.visualstudio.com
 
           # Personal access token
