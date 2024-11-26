@@ -3,7 +3,7 @@
   "displayName": "GetX Helper",
   "description": "A plugin for simplifying the use of GetX",
   "publisher": "LinXunFeng",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.73.0"
@@ -56,7 +56,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.9",
     "@types/node": "20.x",
-    "@types/vscode": "^1.95.0",
+    "@types/vscode": "^1.73.0",
     "@typescript-eslint/eslint-plugin": "^8.10.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vscode/test-cli": "^0.0.10",
