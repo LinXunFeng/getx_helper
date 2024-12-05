@@ -1,0 +1,36 @@
+{
+  "GetBuilder": {
+    "prefix": "GH_GetBuilder",
+    "body": [
+      "GetBuilder<${1:Logic}>(",
+      "  tag: logicTag,",
+      "  builder: (_) {",
+      "    return Container();",
+      "  },",
+      ");"
+    ],
+    "description": "GetBuilder"
+  },
+  "GetxLogicProvider.put": {
+    "prefix": "GH_GetxLogicProvider.put",
+    "body": [
+      "GetxLogicProvider.put(",
+      "  ${1:Logic}.new,",
+      "  child: $2,",
+      ");"
+    ],
+    "description": "GetxLogicProvider"
+  },
+  "GetxLogicConsumer.get": {
+    "prefix": "GH_GetxLogicConsumer.get",
+    "body": [
+      "GetxLogicConsumer.get(",
+      "  ${1:Logic}.new,",
+      "  builder: (context, logic, logicTag) {",
+      "    return $2;",
+      "  },",
+      ");"
+    ],
+    "description": "GetxLogicConsumer"
+  }
+}

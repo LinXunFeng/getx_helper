@@ -3,12 +3,13 @@
   "displayName": "GetX Helper",
   "description": "A plugin for simplifying the use of GetX",
   "publisher": "LinXunFeng",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.73.0"
   },
   "categories": [
+    "Snippets",
     "Other"
   ],
   "activationEvents": [
@@ -20,7 +21,7 @@
     "commands": [
       {
         "command": "getx-helper.logic-mixin-widget",
-        "title": "Getx: Mixin Widget"
+        "title": "GetX: Mixin Widget"
       },
       {
         "command": "getx-helper.simple-getx-page",
@@ -40,7 +41,13 @@
           "when": "explorerResourceIsFolder && isDartProject"
         }
       ]
-    }
+    },
+    "snippets": [
+      {
+        "language": "dart",
+        "path": "./snippets/snippets.json"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

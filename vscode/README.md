@@ -2,6 +2,13 @@
 
 A plugin for simplifying the use of GetX
 
+## 📝 Snippets
+
+| Prefix | Body |
+| ------------- | ------------- |
+| `GH_GetBuilder` | GetBuilder |
+| `GH_GetxLogicProvider.put` | GetxLogicProvider.put |
+| `GH_GetxLogicConsumer.get` | GetxLogicConsumer.get |
 
 
 ## 🖨 About Me
