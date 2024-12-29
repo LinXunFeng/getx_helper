@@ -17,11 +17,17 @@ export const fetchCurrentPathForImport = (
   }
   const packageName = yamlUtil.parse(filePath).name;
 
+  // mac path: /home/Flutter/xxxx/lib/pages/home
+  // windows path: d:\\Projects\\Flutter\\xxxx\\lib\\pages\\home
   const currentPath = path.join(currentDirectoryPath, pageName);
-  const libKeyStr = "/lib/";
+  const libKeyStr = platform === "win32" ? "\\lib\\" : "/lib/";
   const libIndex = currentPath.indexOf(libKeyStr);
   const afterPath = currentPath.substring(libIndex + libKeyStr.length);
-  const finalPath = path.join(packageName, afterPath);
+  // path.join() 具有平台差异，在 windows 上拼接出来的路径，使用的分割符为 \\，但 dart 文件中导包需要使用的是 /，所以此处需要替换一下导包的路径分割符
+  let finalPath = path.join(packageName, afterPath);
+  if (platform === "win32") {
+    finalPath = finalPath.replaceAll("\\", "/");
+  }
   return finalPath;
 };
 
