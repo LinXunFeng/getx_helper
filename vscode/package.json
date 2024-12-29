@@ -3,7 +3,7 @@
   "displayName": "GetX Helper",
   "description": "A plugin for simplifying the use of GetX",
   "publisher": "LinXunFeng",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.73.0"
