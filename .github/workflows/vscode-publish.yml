@@ -1,9 +1,11 @@
 name: "VSCode Publish"
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  watch:
+    types: started
 defaults:
   run:
     working-directory: ./vscode
