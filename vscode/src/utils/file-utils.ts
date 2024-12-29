@@ -1,6 +1,7 @@
 import { existsSync, writeFile, readdir, readdirSync } from 'fs';
 import * as mkdirp from "mkdirp";
 import path = require('path');
+import { handlePath } from './path-utils';
 
 /// 查找pubspec.yaml文件
 export const findPubspecYaml = (path: string) => {
@@ -12,6 +13,7 @@ export const upwardSearchFile = (
   directoryPath: string, 
   filename: string
 ): string => {
+  directoryPath = handlePath(directoryPath);
   if (directoryPath.length === 0) { return ''; }
   const files = readdirSync(directoryPath);
   if (files.includes(filename)) {
@@ -23,6 +25,7 @@ export const upwardSearchFile = (
 
 /// 创建目录
 export const createDirectory = async (dir: string) => {
+  dir = handlePath(dir);
   mkdirp.sync(dir);
 };
 
@@ -32,6 +35,7 @@ export const generateCode = (
   fileName: string,
   code: string
 ): Promise<void> => {
+  targetDirectory = handlePath(targetDirectory);
   return new Promise<void>(async (resolve, reject) => {
     if (!existsSync(targetDirectory)) { // 目录不存在，先创建
       createDirectory(targetDirectory);
