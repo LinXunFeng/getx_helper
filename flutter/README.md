@@ -1,10 +1,16 @@
 # GetX Helper
 
-A plugin for simplifying the use of GetX
+简化与规范 GetX tag 的应用
 
-## Getting started
+## ☕ 请我喝一杯咖啡
 
-Add `getx_helper` to your pubspec.yaml file:
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T4JKVRP) [![wechat](https://img.shields.io/static/v1?label=WeChat&message=微信收款码&color=brightgreen&style=for-the-badge&logo=WeChat)](https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20220417121922/image/202303181116760.jpeg)
+
+微信技术交流群请看: [【微信群说明】](https://mp.weixin.qq.com/s/JBbMstn0qW6M71hh-BRKzw)
+
+## 📦 安装
+
+添加 `getx_helper` 到你的 `pubspec.yaml` 文件中:
 
 
 ```yaml
@@ -12,17 +18,17 @@ dependencies:
   getx_helper: latest_version
 ```
 
-Import `getx_helper` in files that it will be used:
+导入 `getx_helper` 到你要使用的文件中:
 
 ```dart
 import 'package:getx_helper/getx_helper.dart';
 ```
 
-## Usage
+## 🕹 使用
 
 Please refer to [example](./flutter/example)
 
-## 🖨 About Me
+## 🖨 关于
 
 - GitHub: [https://github.com/LinXunFeng](https://github.com/LinXunFeng)
 - Email: [linxunfeng@yeah.net](mailto:linxunfeng@yeah.net)
