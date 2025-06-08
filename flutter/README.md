@@ -26,7 +26,7 @@ import 'package:getx_helper/getx_helper.dart';
 
 ## 🕹 使用
 
-Please refer to [example](./flutter/example)
+- [Flutter - GetX Helper 助你规范应用 tag](https://www.fullstackaction.com/pages/9ba5a4/) | [备用链接](https://juejin.cn/post/7513158069418065957)
 
 ## 🖨 关于
 
