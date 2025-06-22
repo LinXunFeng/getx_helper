@@ -26,8 +26,8 @@ import 'package:getx_helper/getx_helper.dart';
 
 ## 🕹 使用
 
-- [Flutter - GetX Helper 助你规范应用 tag](https://www.fullstackaction.com/pages/9ba5a4/) | [备用链接](https://juejin.cn/post/7513158069418065957)
-- [Flutter - GetX Helper 如何应用于旧页面](https://www.fullstackaction.com/pages/f903b2/) | [备用链接](https://juejin.cn/post/7516035077186289716)
+- [Flutter - GetX Helper 助你规范应用 tag](https://mp.weixin.qq.com/s/sWztIITF61xRMELN0jFkUA) | [备用1](https://www.fullstackaction.com/pages/9ba5a4/) | [备用2](https://juejin.cn/post/7513158069418065957)
+- [Flutter - GetX Helper 如何应用于旧页面](https://mp.weixin.qq.com/s/r_BEiFWiawO2jEUmktwjkw) | [备用1](https://www.fullstackaction.com/pages/f903b2/) | [备用2](https://juejin.cn/post/7516035077186289716)
 
 
 ## 🛠 插件
