@@ -1,3 +1,4 @@
+import * as vscode from "vscode";
 import * as path from "path";
 import * as yamlUtil from "../utils/yaml-utils";
 import { findPubspecYaml } from "../utils/file-utils";
@@ -38,4 +39,34 @@ export const handlePath = (path: string) => {
     path = path.substring(1);
   }
   return path;
+};
+
+/**
+ * 向上查找包含 'header' 子目录的最近父级目录的 URI。
+ * 如果找不到，则返回原始 URI 的父级目录。
+ * @param currentUri 当前文件的 URI
+ * @returns 包含 'header' 子目录的父级目录的 URI，或原始 URI 的父级目录。
+ */
+export const findPageRootByHeaderPresence = async (
+  currentUri: vscode.Uri
+): Promise<vscode.Uri> => {
+  let currentDirUri = currentUri;
+  while (true) {
+    const headerDirUri = vscode.Uri.joinPath(currentDirUri, "header");
+    try {
+      const stat = await vscode.workspace.fs.stat(headerDirUri);
+      if (stat.type === vscode.FileType.Directory) {
+        return currentDirUri; // 找到包含 header 目录的父目录
+      }
+    } catch (e) {
+      // 目录不存在或无法访问，继续向上
+    }
+
+    const parentDirUri = vscode.Uri.joinPath(currentDirUri, "..");
+    // 如果已经到达文件系统的根目录，并且没有找到 header 目录，则返回原始 URI 的父级目录
+    if (parentDirUri.fsPath === currentDirUri.fsPath) {
+      return vscode.Uri.joinPath(currentUri, "..");
+    }
+    currentDirUri = parentDirUri;
+  }
 };
