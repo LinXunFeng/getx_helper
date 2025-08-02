@@ -1,6 +1,17 @@
 # GetX Helper
 
-A plugin for simplifying the use of GetX
+简化与规范 GetX tag 的应用
+
+## ☕ 请我喝一杯咖啡
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T4JKVRP) [![wechat](https://img.shields.io/static/v1?label=WeChat&message=微信收款码&color=brightgreen&style=for-the-badge&logo=WeChat)](https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20220417121922/image/202303181116760.jpeg)
+
+微信技术交流群请看: [【微信群说明】](https://mp.weixin.qq.com/s/JBbMstn0qW6M71hh-BRKzw)
+
+## 🕹 使用
+
+- [Flutter - GetX Helper 助你规范应用 tag](https://mp.weixin.qq.com/s/sWztIITF61xRMELN0jFkUA) | [备用1](https://www.fullstackaction.com/pages/9ba5a4/) | [备用2](https://juejin.cn/post/7513158069418065957)
+- [Flutter - GetX Helper 如何应用于旧页面](https://mp.weixin.qq.com/s/r_BEiFWiawO2jEUmktwjkw) | [备用1](https://www.fullstackaction.com/pages/f903b2/) | [备用2](https://juejin.cn/post/7516035077186289716)
 
 ## 📝 Snippets
 
