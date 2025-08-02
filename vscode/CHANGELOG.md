@@ -1,9 +1,6 @@
-# Change Log
+## 0.2.0
+- 新增自动设置 `assignId` 配置项
+- 优化导入路径的查找逻辑
 
-All notable changes to the "getx-helper" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+## 0.1.2
+- 完成插件功能
