@@ -48,7 +48,17 @@
         "language": "dart",
         "path": "./snippets/snippets.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "GetX Helper",
+      "properties": {
+        "fullstackaction-getx-helper.autoSetAssignId": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically set assignId to true in generated GetX pages."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

@@ -17,6 +17,9 @@ export const newSimpleGetxPage = async (uri: vscode.Uri) => {
   const nameLargeHump = underline2Hump(name, true);
   const importPath = fetchCurrentPathForImport(uri.path, name);
 
+  const config = vscode.workspace.getConfiguration('fullstackaction-getx-helper');
+  const autoSetAssignId = config.get<boolean>('autoSetAssignId', false);
+
   // header
   const headerContent = await compile(headerTemplatePosition, {
     name,
@@ -34,6 +37,7 @@ export const newSimpleGetxPage = async (uri: vscode.Uri) => {
     name,
     nameLargeHump,
     importPath,
+    autoSetAssignId,
   });
   generateCode(
     vscode.Uri.joinPath(uri, name, 'page').path,

@@ -20,6 +20,9 @@ class <%= data.nameLargeHump %>PageState extends State<<%= data.nameLargeHump %>
   Widget buildBody(BuildContext context) {
     return GetBuilder<<%= data.nameLargeHump %>Logic>(
       tag: logicTag,
+<% if (data.autoSetAssignId) { -%>
+      assignId: true,
+<% } -%>
       builder: (_) {
         return Scaffold(
           body: Container(),
