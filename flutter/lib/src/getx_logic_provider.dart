@@ -6,6 +6,7 @@ import 'package:getx_helper/src/getx_tag.dart';
 
 import 'package:getx_helper/src/getx_tag_provider.dart';
 import 'package:getx_helper/src/getx_utils.dart';
+import 'package:getx_helper/src/widget/gh_sync_ticker.dart';
 
 typedef GetxLogicCreate<T extends GetxController> = T Function();
 
@@ -90,6 +91,19 @@ mixin GetxLogicPutStateMixin<T extends GetxController, W extends StatefulWidget>
   /// 记录当前的 logicTag
   late String logicTag;
 
+  /// 同步 ticker
+  void _syncTicker(bool tickingEnabled) {
+    if (!mounted) return;
+    // print('tickingEnabled: $tickingEnabled logic: $logic');
+    if (logic is GetTickerProviderStateMixin) {
+      final innerLogic = logic as GetTickerProviderStateMixin;
+      innerLogic.didChangeDependencies(context);
+    } else if (logic is GetSingleTickerProviderStateMixin) {
+      final innerLogic = logic as GetSingleTickerProviderStateMixin;
+      innerLogic.didChangeDependencies(context);
+    }
+  }
+
   @override
   String? customLogicTag() {
     return null;
@@ -112,10 +126,26 @@ mixin GetxLogicPutStateMixin<T extends GetxController, W extends StatefulWidget>
 
   @override
   Widget build(BuildContext context) {
-    return GetxTagProvider<T>(
+    Widget resultWidget = GetxTagProvider<T>(
       logicTag: logicTag,
       child: buildBody(context),
     );
+
+    // 同步 ticker
+    resultWidget = Stack(
+      children: [
+        resultWidget,
+        Positioned(
+          left: 0,
+          top: 0,
+          child: GHSyncTicker(
+            onTickerSync: _syncTicker,
+          ),
+        ),
+      ],
+    );
+
+    return resultWidget;
   }
 }
 
