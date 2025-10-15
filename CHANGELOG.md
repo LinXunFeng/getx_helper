@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-10-15
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`getx_helper` - `v0.0.3`](#getx_helper---v003)
+
+---
+
+#### `getx_helper` - `v0.0.3`
+
+ - **FIX**(flutter): 修复 GetxLogicProvider 多次 rebuild 的 bug.
+
+
 ## 2025-09-23
 
 ### Changes
