@@ -92,15 +92,18 @@ mixin GetxLogicPutStateMixin<T extends GetxController, W extends StatefulWidget>
   late String logicTag;
 
   /// 同步 ticker
-  void _syncTicker(bool tickingEnabled) {
+  void _syncTicker(
+    bool tickingEnabled,
+    BuildContext ctx,
+  ) {
     if (!mounted) return;
     // print('tickingEnabled: $tickingEnabled logic: $logic');
     if (logic is GetTickerProviderStateMixin) {
       final innerLogic = logic as GetTickerProviderStateMixin;
-      innerLogic.didChangeDependencies(context);
+      innerLogic.didChangeDependencies(ctx);
     } else if (logic is GetSingleTickerProviderStateMixin) {
       final innerLogic = logic as GetSingleTickerProviderStateMixin;
-      innerLogic.didChangeDependencies(context);
+      innerLogic.didChangeDependencies(ctx);
     }
   }
 

@@ -11,7 +11,7 @@ void main() {
       TickerMode(
         enabled: true,
         child: GHSyncTicker(
-          onTickerSync: (enabled) {
+          onTickerSync: (enabled, ctx) {
             tickerEnabled = enabled;
           },
         ),
@@ -24,7 +24,7 @@ void main() {
       TickerMode(
         enabled: false,
         child: GHSyncTicker(
-          onTickerSync: (enabled) {
+          onTickerSync: (enabled, ctx) {
             tickerEnabled = enabled;
           },
         ),

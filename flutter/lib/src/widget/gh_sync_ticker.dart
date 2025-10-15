@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 /// 同步 ticker 状态
 class GHSyncTicker extends StatelessWidget {
-  final void Function(bool tickingEnabled) onTickerSync;
+  final void Function(
+    bool tickingEnabled,
+    BuildContext context,
+  ) onTickerSync;
 
   const GHSyncTicker({
     super.key,
@@ -12,7 +15,10 @@ class GHSyncTicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tickingEnabled = TickerMode.of(context);
-    onTickerSync(tickingEnabled);
+    onTickerSync(
+      tickingEnabled,
+      context,
+    );
     return const SizedBox.shrink();
   }
 }
