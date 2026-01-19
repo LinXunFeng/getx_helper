@@ -1,24 +1,29 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
-import { compile } from '../utils/ejs-utils';
-import { generateCode } from '../utils/file-utils';
-import { showInputBox } from '../utils/vscode-utils';
-import { underline2Hump } from '../utils/string-utils';
-import { fetchCurrentPathForImport } from '../utils/path-utils';
+import { compile } from "../utils/ejs-utils";
+import { generateCode } from "../utils/file-utils";
+import { showInputBox } from "../utils/vscode-utils";
+import { underline2Hump } from "../utils/string-utils";
+import { fetchCurrentPathForImport } from "../utils/path-utils";
 
-import headerTemplatePosition from '../template/simple-getx-page/header/header.dart.ejs';
-import pageTemplatePosition from '../template/simple-getx-page/page/page.dart.ejs';
-import logicTemplatePosition from '../template/simple-getx-page/logic/logic.dart.ejs';
-import stateTemplatePosition from '../template/simple-getx-page/state/state.dart.ejs';
+import headerTemplatePosition from "../template/simple-getx-page/header/header.dart.ejs";
+import pageTemplatePosition from "../template/simple-getx-page/page/page.dart.ejs";
+import logicTemplatePosition from "../template/simple-getx-page/logic/logic.dart.ejs";
+import stateTemplatePosition from "../template/simple-getx-page/state/state.dart.ejs";
 
 export const newSimpleGetxPage = async (uri: vscode.Uri) => {
-  const name: string = await showInputBox() || '';
-  if (!name) { return; }
+  const name: string = (await showInputBox()) || "";
+  if (!name) {
+    return;
+  }
   const nameLargeHump = underline2Hump(name, true);
   const importPath = fetchCurrentPathForImport(uri.path, name);
 
-  const config = vscode.workspace.getConfiguration('fullstackaction-getx-helper');
-  const autoSetAssignId = config.get<boolean>('autoSetAssignId', false);
+  const config = vscode.workspace.getConfiguration(
+    "fullstackaction-getx-helper",
+  );
+  const autoSetAssignId = config.get<boolean>("autoSetAssignId", false);
+  const stateVariableName = config.get<string>("stateVariableName", "state");
 
   // header
   const headerContent = await compile(headerTemplatePosition, {
@@ -27,9 +32,9 @@ export const newSimpleGetxPage = async (uri: vscode.Uri) => {
     importPath,
   });
   generateCode(
-    vscode.Uri.joinPath(uri, name, 'header').path,
+    vscode.Uri.joinPath(uri, name, "header").path,
     `${name}_header.dart`,
-    headerContent
+    headerContent,
   );
 
   // page
@@ -40,9 +45,9 @@ export const newSimpleGetxPage = async (uri: vscode.Uri) => {
     autoSetAssignId,
   });
   generateCode(
-    vscode.Uri.joinPath(uri, name, 'page').path,
+    vscode.Uri.joinPath(uri, name, "page").path,
     `${name}_page.dart`,
-    pageContent
+    pageContent,
   );
 
   // logic
@@ -50,11 +55,12 @@ export const newSimpleGetxPage = async (uri: vscode.Uri) => {
     name,
     nameLargeHump,
     importPath,
+    stateVariableName,
   });
   generateCode(
-    vscode.Uri.joinPath(uri, name, 'logic').path,
+    vscode.Uri.joinPath(uri, name, "logic").path,
     `${name}_logic.dart`,
-    logicContent
+    logicContent,
   );
 
   // state
@@ -62,8 +68,8 @@ export const newSimpleGetxPage = async (uri: vscode.Uri) => {
     nameLargeHump,
   });
   generateCode(
-    vscode.Uri.joinPath(uri, name, 'state').path,
+    vscode.Uri.joinPath(uri, name, "state").path,
     `${name}_state.dart`,
-    stateContent
+    stateContent,
   );
 };

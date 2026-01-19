@@ -56,6 +56,11 @@
           "type": "boolean",
           "default": false,
           "description": "Automatically set assignId to true in generated GetX pages."
+        },
+        "fullstackaction-getx-helper.stateVariableName": {
+          "type": "string",
+          "default": "state",
+          "description": "Variable name for state in generated GetX logic files."
         }
       }
     }
