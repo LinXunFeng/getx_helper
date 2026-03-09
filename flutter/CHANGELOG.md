@@ -1,3 +1,7 @@
+## 0.1.0
+
+ - **FEAT**(flutter): PutStateMixin 新增 assignId 方法.
+
 ## 0.0.3
 
  - **FIX**(flutter): 修复 GetxLogicProvider 多次 rebuild 的 bug.

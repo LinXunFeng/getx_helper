@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2026-03-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`getx_helper` - `v0.1.0`](#getx_helper---v010)
+
+---
+
+#### `getx_helper` - `v0.1.0`
+
+ - **FEAT**(flutter): PutStateMixin 新增 assignId 方法.
+
+
 ## 2025-10-15
 
 ### Changes
