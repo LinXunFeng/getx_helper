@@ -4,7 +4,7 @@
   "description": "A plugin for simplifying the use of GetX",
   "publisher": "LinXunFeng",
   "repository": "https://github.com/LinXunFeng/getx_helper",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.73.0"
@@ -54,7 +54,7 @@
       "properties": {
         "fullstackaction-getx-helper.autoSetAssignId": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Automatically set assignId to true in generated GetX pages."
         },
         "fullstackaction-getx-helper.stateVariableName": {

@@ -1,3 +1,7 @@
+## 0.4.0
+- `autoSetAssignId` 配置项默认值调整为 `true`
+- 适配 `getx_helper: ^0.1.0` 
+
 ## 0.3.0
 - 允许自定义 `logic` 模板代码中的 `state` 变量名
 
