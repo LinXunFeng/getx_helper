@@ -113,10 +113,20 @@ mixin GetxLogicPutStateMixin<T extends GetxController, W extends StatefulWidget>
   }
 
   @override
+  bool assignId() {
+    return false;
+  }
+
+  @override
   void initState() {
     super.initState();
 
     logicTag = customLogicTag.call() ?? GetxUtils.uniqueTag();
+    logicTag = GetxUtils.appendAiTag(
+      tag: logicTag,
+      assignId: assignId(),
+    );
+
     logic = initLogic();
 
     // 在这里 put，logic 的 onInit 方法就会走 这样在使用时就可以在 initState 里放心使用
@@ -129,6 +139,23 @@ mixin GetxLogicPutStateMixin<T extends GetxController, W extends StatefulWidget>
 
   @override
   Widget build(BuildContext context) {
+    final isAssignId = assignId();
+    if (isAssignId) {
+      return GetBuilder<T>(
+        tag: logicTag,
+        assignId: isAssignId,
+        // 设置 id 是为了避免影响原有视图，导致视图刷新多次。
+        // 因为原有视图可能自己也有 GetBuilder
+        id: logicTag,
+        builder: (_) {
+          return _build();
+        },
+      );
+    }
+    return _build();
+  }
+
+  Widget _build() {
     Widget resultWidget = GetxTagProvider<T>(
       logicTag: logicTag,
       child: buildBody(context),
@@ -158,6 +185,9 @@ abstract class GetxLogicPutStateMixinBuilder<T extends GetxController> {
 
   /// 自定义 logicTag
   String? customLogicTag();
+
+  /// assignId 的值
+  bool assignId();
 
   /// 构建 body
   Widget buildBody(BuildContext context);
