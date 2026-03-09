@@ -39,6 +39,12 @@ dependencies:
   getx_helper:
     path: ../
 
+dependency_overrides:
+  get:
+    git:
+      url: git@github.com:LinXunFeng/getx_fix.git
+      ref: 4.6.6_fix_getx_helper
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

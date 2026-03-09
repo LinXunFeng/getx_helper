@@ -1,7 +1,7 @@
-import 'package:flutter/foundation.dart';
-
 import 'package:example/common/route/route.dart';
+import 'package:example/page/home/header/home_header.dart';
 import 'package:example/page/home/state/home_state.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class HomeLogic extends GetxController {
@@ -17,6 +17,11 @@ class HomeLogic extends GetxController {
   }
 
   void handleFABClick() async {
+    Future.delayed(const Duration(milliseconds: 500)).then((_) {
+      state.showComplexWidget = true;
+      update([HomeUpdateType.body]);
+    });
+
     final result = await Get.toNamed(
       AppRoute.profile,
       parameters: {

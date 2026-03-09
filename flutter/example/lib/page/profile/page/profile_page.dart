@@ -3,7 +3,6 @@ import 'package:example/page/profile/logic/profile_logic.dart';
 import 'package:example/page/profile/state/profile_state.dart';
 import 'package:example/page/profile/widget/profile_flutter_dash_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:getx_helper/getx_helper.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -21,19 +20,17 @@ class ProfilePageState extends State<ProfilePage>
   ProfileLogic initLogic() => ProfileLogic();
 
   @override
+  bool assignId() => true;
+
+  @override
   Widget buildBody(BuildContext context) {
-    return GetBuilder<ProfileLogic>(
-      tag: logicTag,
-      builder: (_) {
-        return Scaffold(
-          appBar: AppBar(title: const Text('Profile')),
-          body: _buildBody(),
-          floatingActionButton: FloatingActionButton(
-            onPressed: logic.handleFABClick,
-            child: const Icon(Icons.arrow_back),
-          ),
-        );
-      },
+    return Scaffold(
+      appBar: AppBar(title: const Text('Profile')),
+      body: _buildBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: logic.handleFABClick,
+        child: const Icon(Icons.arrow_back),
+      ),
     );
   }
 

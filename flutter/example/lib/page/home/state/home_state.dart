@@ -1,1 +1,3 @@
-class HomeState {}
+class HomeState {
+  bool showComplexWidget = false;
+}
